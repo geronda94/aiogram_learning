@@ -28,30 +28,36 @@ while counter < MAX_COUNTER:
     counter += 1
 
 
-##if updates['result']
+##if updates['result']  если все ок то вернется JSON такого формата
 # {
-#   "ok": true,
-#   "result": [
-#     {
-#       "update_id": 792864383,
-#       "message": {
-#         "message_id": 32,
-#         "from": {
-#           "id": 413281115,
-#           "is_bot": false,
-#           "first_name": "...",
-#           "username": "username22549",
-#           "language_code": "ru"
+#     "ok": true,
+#     "result": [
+#         {
+#             "update_id": 792864387,
+#             "edited_message": {
+#                 "message_id": 24,
+#                 "from": {
+#                     "id": 413281115,
+#                     "is_bot": false,
+#                     "first_name": "...",
+#                     "username": "username22549",
+#                     "language_code": "ru"
+#                 },
+#                 "chat": {
+#                     "id": 413281115,
+#                     "first_name": "...",
+#                     "username": "username22549",
+#                     "type": "private"
+#                 },
+#                 "date": 1675084080,
+#                 "edit_date": 1675092494,
+#                 "text": "/start",
+#                 "entities": [
+#                     {
+#                         "offset": 0,
+#                         "length": 6,
+#                         "type": "bot_command"
+#                     }
+#                 ]
+#             }
 #         },
-#         "chat": {
-#           "id": 413281115,
-#           "first_name": "...",
-#           "username": "username22549",
-#           "type": "private"
-#         },
-#         "date": 1675091908,
-#         "text": "\u043f\u0440\u0438\u0432\u0435\u0442"
-#       }
-#     }
-#   ]
-# }
