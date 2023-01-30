@@ -13,12 +13,11 @@ chat_id: int
 
 
 while counter < MAX_COUNTER:
-
     print('attempt =', counter)  #Чтобы видеть в консоли, что код живет
-
     updates = requests.get(f'{API_URL}{BOT_TOKEN}/getUpdates?offset={offset + 1}').json()
 
     if updates['result']:
+        print(updates['result'])
         for result in updates['result']:
             offset = result['update_id']
             chat_id = result['message']['from']['id']
@@ -28,36 +27,27 @@ while counter < MAX_COUNTER:
     counter += 1
 
 
-##if updates['result']  если все ок то вернется JSON такого формата
-# {
-#     "ok": true,
-#     "result": [
-#         {
-#             "update_id": 792864387,
-#             "edited_message": {
-#                 "message_id": 24,
-#                 "from": {
-#                     "id": 413281115,
-#                     "is_bot": false,
-#                     "first_name": "...",
-#                     "username": "username22549",
-#                     "language_code": "ru"
-#                 },
-#                 "chat": {
-#                     "id": 413281115,
-#                     "first_name": "...",
-#                     "username": "username22549",
-#                     "type": "private"
-#                 },
-#                 "date": 1675084080,
-#                 "edit_date": 1675092494,
-#                 "text": "/start",
-#                 "entities": [
-#                     {
-#                         "offset": 0,
-#                         "length": 6,
-#                         "type": "bot_command"
-#                     }
-#                 ]
-#             }
-#         },
+##if updates['result']  если все ок то updates['result'] будет в таком JSON формате
+# [
+#   {
+#     'update_id': 792864391,
+#     'message': {
+#       'message_id': 44,
+#       'from': {
+#         'id': 413281115,
+#         'is_bot': False,
+#         'first_name': '...',
+#         'username': 'username22549',
+#         'language_code': 'ru'
+#       },
+#       'chat': {
+#         'id': 413281115,
+#         'first_name': '...',
+#         'username': 'username22549',
+#         'type': 'private'
+#       },
+#       'date': 1675094450,
+#       'text': 'пр'
+#     }
+#   }
+# ]
