@@ -1,4 +1,0 @@
-import aiogram
-
-
-print('hello')
