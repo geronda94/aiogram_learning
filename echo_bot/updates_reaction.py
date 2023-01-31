@@ -32,25 +32,36 @@ async def resend_photo(message: Message):
     await bot.send_message(413281115, f'Новое фото от пользователя {user}')
 
 
-
-@dp.message(F.content_type == ContentType.STICKER)
-async def resend_sticker(message: Message):
-    print(message.json())
-    self_sticker = message.sticker.file_id
-    await message.reply_sticker(self_sticker)
-
-
-@dp.message(F.content_type == ContentType.VOICE)
-async def resend_voice(message: Message):
-    self_voice = message.voice.file_id
-
-    await message.reply_voice(self_voice)
-
-
-
+#Функция которая ловит все виды апдейтов и возвращает их-же пользователю
 @dp.message()
 async def send_echo(message: Message):
-    await message.reply(message.text)
+    try:
+        await message.send_copy(chat_id=message.chat.id)
+    except TypeError:
+        await message.reply(text='Данный тип апдейтов не поддерживается '
+                                 'методом send_copy')
+
+
+# @dp.message(F.content_type == ContentType.STICKER)
+# async def resend_sticker(message: Message):
+#     print(message.json())
+#     self_sticker = message.sticker.file_id
+#     await message.reply_sticker(self_sticker)
+#
+#
+# @dp.message(F.content_type == ContentType.VOICE)
+# async def resend_voice(message: Message):
+#     self_voice = message.voice.file_id
+#
+#     await message.reply_voice(self_voice)
+
+# @dp.message()
+# async def send_echo(message: Message):
+#     await message.reply(message.text)
+
+
+
+
 
 
 dp.run_polling(bot)
