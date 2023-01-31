@@ -32,6 +32,7 @@ async def resend_photo(message: Message):
     await bot.send_message(413281115, f'Новое фото от пользователя {user}')
 
 
+
 @dp.message(F.content_type == ContentType.STICKER)
 async def resend_sticker(message: Message):
     print(message.json())
