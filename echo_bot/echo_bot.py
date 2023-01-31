@@ -27,7 +27,12 @@ async def process_help_command(message: Message):
 # кроме команд "/start" и "/help"
 @dp.message()
 async def send_echo(message: Message):
-    await message.reply(text=message.text)
+    await message.reply(text=f'Даже не знаю что вам ответить на: {message.text}') #.answer - отправка ответа без пересылки
+
+    #если нужно отправить в другой чат сообщение то можем написть такие параметры в функцию
+    #await bot.send_message(chat_id='ID или название чата', text='Какой-то текст') #413281115
+    #Аналогичные действия другим способом, автоматичски вставляетя чат оправителя
+    #await bot.send_message(message.chat.id, message.text) # Вместо message.text  можно указать параметр text='Привет'
 
 
 dp.run_polling(bot)
