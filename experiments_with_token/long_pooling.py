@@ -1,9 +1,9 @@
 import requests
 import time
-
+from data import TOKEN
 
 API_URL: str = 'https://api.telegram.org/bot'
-BOT_TOKEN: str = '5922136610:AAHpecQUXLSkuJDoglLXLOtg1xGgXyIJmbY'
+BOT_TOKEN: str = TOKEN
 offset: int = -2
 timeout: int = 100
 updates: dict

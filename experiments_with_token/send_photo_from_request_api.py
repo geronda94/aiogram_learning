@@ -1,5 +1,6 @@
 import requests
 import time
+from data import TOKEN
 
 #  в результате работы этого скрипта получаем гет запррос такого формата
 'https://api.telegram.org/bot5922136610:AAHpecQUXLSkuJDoglLXLOtg1xGgXyIJmbY/sendPhoto' \
@@ -10,7 +11,7 @@ import time
 
 API_URL: str = 'https://api.telegram.org/bot'
 API_CATS_URL: str = 'https://aws.random.cat/meow'
-BOT_TOKEN: str = '5922136610:AAHpecQUXLSkuJDoglLXLOtg1xGgXyIJmbY'
+BOT_TOKEN: str = TOKEN
 ERROR_TEXT: str = 'Здесь должна была быть картинка с котиком :('
 
 offset: int = -2
