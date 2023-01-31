@@ -8,6 +8,8 @@ from data import TOKEN
 
 #https://api.telegram.org/bot5922136610:AAHpecQUXLSkuJDoglLXLOtg1xGgXyIJmbY/sendPhoto?chat_id=413281115&photo=https://purr.objects-us-east-1.dream.io/i/img-20170715-wa0004.jpg
 
+https://api.telegram.org/bot5922136610:AAHpecQUXLSkuJDoglLXLOtg1xGgXyIJmbY/getUpdates?offset=-1
+
 
 API_URL: str = 'https://api.telegram.org/bot'
 API_CATS_URL: str = 'https://aws.random.cat/meow'
