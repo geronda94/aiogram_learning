@@ -34,7 +34,17 @@ async def resend_photo(message: Message):
 
 @dp.message(F.content_type == ContentType.STICKER)
 async def resend_sticker(message: Message):
-    await message.reply_sticker('Классный стикер')
+    print(message.json())
+    self_sticker = message.sticker.file_id
+    await message.reply_sticker(self_sticker)
+
+
+@dp.message(F.content_type == ContentType.VOICE)
+async def resend_voice(message: Message):
+    self_voice = message.voice.file_id
+
+    await message.reply_voice(self_voice)
+
 
 
 @dp.message()
