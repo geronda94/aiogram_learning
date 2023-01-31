@@ -18,6 +18,8 @@ async def start_command(message: Message):
 async def help_command(message: Message):
     await message.answer('Я много чего умею! Всего не перечесть!')
 
+
+
 @dp.message(F.photo)
 async def resend_photo(message: Message):
     print(message.json())
@@ -31,9 +33,13 @@ async def resend_photo(message: Message):
 
 
 @dp.message(F.content_type == ContentType.STICKER)
-async def resend_stiker(message: Message):
-    await message.answer_sticker(message.sticker)
+async def resend_sticker(message: Message):
+    await message.reply_sticker('Классный стикер')
 
+
+@dp.message()
+async def send_echo(message: Message):
+    await message.reply(message.text)
 
 
 dp.run_polling(bot)
